@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Programación Lineal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="libs/plotly.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+  <div class="main-card">
+    <h1 class="titulo"><span>Programación Lineal</span><br><small>Operaciones con Matrices y Programación Lineal</small></h1>
+
+    <div class="tabs">
+      <button class="tab-button active" onclick="mostrarTab('matrices')">📊 Matrices</button>
+      <button class="tab-button" onclick="mostrarTab('lineal')">📈 Programación Lineal</button>
+    </div>
+
+    <!-- Contenido de Matrices -->
+    <div id="matrices" class="tab-content">
+      <h2>Operaciones con Matrices</h2>
+      <div class="form-grid">
+        <label>Operación:
+          <select id="operacion">
+            <option value="sumar">Suma (A + B)</option>
+            <option value="restar">Resta (A - B)</option>
+            <option value="multiplicar">Multiplicación (A × B)</option>
+          </select>
+        </label>
+        <label>Filas A: <input type="number" id="filasA" value="2" min="1"></label>
+        <label>Columnas A: <input type="number" id="colsA" value="2" min="1"></label>
+        <label>Filas B: <input type="number" id="filasB" value="2" min="1"></label>
+        <label>Columnas B: <input type="number" id="colsB" value="2" min="1"></label>
+      </div>
+
+      <div class="matrices-contenedor">
+        <div>
+          <h3>Matriz A:</h3>
+          <div id="matrizA" class="matriz"></div>
+        </div>
+        <div>
+          <h3>Matriz B:</h3>
+          <div id="matrizB" class="matriz"></div>
+        </div>
+      </div>
+
+      <div class="botones">
+        <button onclick="generarMatrices()">🔄 Generar</button>
+        <button onclick="calcularMatrices()">📐 Calcular</button>
+      </div>
+
+      <div id="resultadoMatrices" class="resultado"></div>
+    </div>
+
+    <!-- Contenido de Programación Lineal -->
+    <div id="lineal" class="tab-content" style="display: none;">
+      <h2>Programación Lineal - Método Gráfico</h2>
+
+      <div class="form-grid">
+        <label>Función Objetivo:
+          <select id="tipoZ">
+            <option value="max">Maximizar</option>
+            <option value="min">Minimizar</option>
+          </select>
+          U = <input type="number" id="zX" value="3" /> x₁ + <input type="number" id="zY" value="1" /> x₂
+        </label>
+      </div>
+
+      <div id="restricciones" class="restricciones"></div>
+      <button onclick="agregarRestriccion()" class="btn-secundario">➕ Agregar Restricción</button>
+
+      <div style="margin-top: 1rem;">
+        <label><input type="checkbox" id="noNegatividad" checked> Incluir restricciones de no negatividad (x₁, x₂ ≥ 0)</label>
+      </div>
+
+      <div class="botones">
+        <button onclick="resolverPL()">🧮 Resolver</button>
+      </div>
+
+      <div id="grafico" style="margin-top: 2rem;"></div>
+
+        <!-- Resultado textual se insertará arriba -->
+        <div id="grafico" style="margin-top: 2rem;"></div>
+
+    </div>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="matrices.js"></script>
+  <script src="lineal.js"></script>
+</body>
+</html>

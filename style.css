@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #7e9ddb, #5f9fbd);
+  color: #333;
+}
+
+.main-card {
+  max-width: 950px;
+  background: rgb(255, 255, 255);
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 2rem;
+}
+
+h1.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1.titulo span {
+  display: block;
+  font-size: 1.6rem;
+}
+
+h1.titulo small {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #555;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  flex: 1;
+  background: #f1f1f1;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: #e6f0ff;
+  border-bottom: 3px solid #3399ff;
+  color: #222;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid label {
+  flex: 1;
+  min-width: 160px;
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.matrices-contenedor {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.matriz {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.matriz input {
+  width: 3rem;
+  text-align: center;
+}
+
+.botones {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.botones button,
+.btn-secundario {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #3399ff;
+  color: white;
+  transition: background 0.3s;
+}
+
+.btn-secundario {
+  background: #8898aa;
+}
+
+.botones button:hover,
+.btn-secundario:hover {
+  background: #2679d6;
+}
+
+.resultado-success, .resultado-lineal {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #74bbdf;
+  color: white;
+  border-radius: 8px;
+  border-left: 8px solid #40b5e0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: monospace;
+}
+
+.resultado-success h4,
+.resultado-lineal h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resultado-success pre,
+.resultado-lineal pre {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.restricciones {
+  margin-bottom: 1rem;
+}
+
+.restriccion-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.restriccion-row input, .restriccion-row select {
+  width: auto;
+}
+
+.restriccion-row button {
+  background: #d9534f;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+.botones button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#btnCalcular {
+  background-color: #3399ff;
+  color: white;
+}
+
+#btnLimpiar {
+  background-color: #8898aa;
+  color: white;
+}
+
+#btnCalcular:hover {
+  background-color: #2679d6;
+}
+
+#btnLimpiar:hover {
+  background-color: #6c757d;
+}
